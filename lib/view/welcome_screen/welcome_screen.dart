@@ -36,7 +36,7 @@ class WelcomeScreen extends StatelessWidget {
             Text(
               "The home for a fashionista",
               style: TextStyle(
-                  color: Color(0xffffffff),
+                  color: ColorConstants.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
@@ -46,13 +46,16 @@ class WelcomeScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 53, vertical: 15),
               decoration: BoxDecoration(
-                  border: Border.all(width: 1.8, color: Colors.white),
+                  border: Border.all(
+                    width: 1.8,
+                    color: ColorConstants.white,
+                  ),
                   borderRadius: BorderRadius.circular(29.5),
-                  color: Color(0xffffffff).withValues(alpha: 70)),
+                  color: ColorConstants.white.withValues(alpha: 70)),
               child: Text(
                 "Get Started",
                 style: TextStyle(
-                    color: Color(0xffffffff),
+                    color: ColorConstants.white,
                     fontSize: 16,
                     fontWeight: FontWeight.bold),
               ),
