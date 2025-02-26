@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flux_store/utils/constants/color_constants.dart';
+import 'package:flux_store/utils/constants/image_constants.dart';
 
 void main() {}
 
@@ -18,6 +19,7 @@ class IntroScreen extends StatelessWidget {
               SizedBox(
                 height: 55,
               ),
+              //title section
               Text(
                 "Discover something new",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -54,6 +56,8 @@ class IntroScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         color: ColorConstants.lightgrey),
+                                    child: Image.asset(ImageConstants.introimg1,
+                                        alignment: Alignment.bottomCenter),
                                   )),
                         ),
                         SizedBox(
@@ -93,7 +97,7 @@ class IntroScreen extends StatelessWidget {
                                 ),
                                 borderRadius: BorderRadius.circular(29.5),
                                 color: ColorConstants.lightgrey
-                                    .withValues(alpha: 70)),
+                                    .withValues(alpha: 170)),
                             child: Text(
                               "Shopping Now",
                               style: TextStyle(
