@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flux_store/utils/constants/color_constants.dart';
 import 'package:flux_store/utils/constants/image_constants.dart';
+import 'package:flux_store/view/intro_screen/intro_screen.dart';
 
 void main() {}
 
@@ -43,21 +44,27 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(
               height: 60,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 53, vertical: 15),
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 1.8,
-                    color: ColorConstants.white,
-                  ),
-                  borderRadius: BorderRadius.circular(29.5),
-                  color: ColorConstants.white.withValues(alpha: 70)),
-              child: Text(
-                "Get Started",
-                style: TextStyle(
-                    color: ColorConstants.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => IntroScreen()));
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 53, vertical: 15),
+                decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 1.8,
+                      color: ColorConstants.white,
+                    ),
+                    borderRadius: BorderRadius.circular(29.5),
+                    color: ColorConstants.lightgrey.withValues(alpha: 70)),
+                child: Text(
+                  "Get Started",
+                  style: TextStyle(
+                      color: ColorConstants.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
             SizedBox(
