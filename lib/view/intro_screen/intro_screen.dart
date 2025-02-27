@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flux_store/global_widgets/reusable_buttons.dart';
 import 'package:flux_store/utils/constants/color_constants.dart';
 import 'package:flux_store/utils/constants/image_constants.dart';
+import 'package:flux_store/view/signup_screen/signup_screen.dart';
 
 void main() {}
 
@@ -46,69 +48,7 @@ class IntroScreen extends StatelessWidget {
                             BoxDecoration(color: ColorConstants.kofblack),
                       ),
                     ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          height: 368,
-                          width: 281,
-                          child: PageView.builder(
-                              itemBuilder: (context, index) => Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: ColorConstants.lightgrey),
-                                    child: Image.asset(ImageConstants.introimg1,
-                                        alignment: Alignment.bottomCenter),
-                                  )),
-                        ),
-                        SizedBox(
-                          height: 57,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          spacing: 10,
-                          children: List.generate(
-                              3,
-                              (index) => Container(
-                                    height: 10,
-                                    width: 10,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      color: ColorConstants.lightgrey,
-                                    ),
-                                  )),
-                        ),
-                        SizedBox(
-                          height: 27,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => IntroScreen()));
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 53, vertical: 15),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                  width: 1.8,
-                                  color: ColorConstants.white,
-                                ),
-                                borderRadius: BorderRadius.circular(29.5),
-                                color: ColorConstants.lightgrey
-                                    .withValues(alpha: 170)),
-                            child: Text(
-                              "Shopping Now",
-                              style: TextStyle(
-                                  color: ColorConstants.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    _buildCarrouselSection(context),
                   ],
                 ),
               ),
@@ -116,6 +56,53 @@ class IntroScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildCarrouselSection(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 368,
+          width: 281,
+          child: PageView.builder(
+              itemBuilder: (context, index) => Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: ColorConstants.lightgrey),
+                    child: Image.asset(ImageConstants.introimg1,
+                        alignment: Alignment.bottomCenter),
+                  )),
+        ),
+        SizedBox(
+          height: 57,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 10,
+          children: List.generate(
+              3,
+              (index) => Container(
+                    height: 10,
+                    width: 10,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: ColorConstants.lightgrey,
+                    ),
+                  )),
+        ),
+        SizedBox(
+          height: 27,
+        ),
+        ReusableButton(
+          name: "Shope Now",
+          oalpha: 170,
+          onClickButton: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => SignupScreen()));
+          },
+        ),
+      ],
     );
   }
 }

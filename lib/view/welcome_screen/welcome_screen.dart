@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flux_store/global_widgets/reusable_buttons.dart';
 import 'package:flux_store/utils/constants/color_constants.dart';
 import 'package:flux_store/utils/constants/image_constants.dart';
 import 'package:flux_store/view/intro_screen/intro_screen.dart';
+//import 'package:flux_store/view/intro_screen/intro_screen.dart';
 
 void main() {}
 
@@ -44,28 +46,13 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(
               height: 60,
             ),
-            InkWell(
-              onTap: () {
+            ReusableButton(
+              name: "Get Started",
+              oalpha: 170,
+              onClickButton: () {
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => IntroScreen()));
               },
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 53, vertical: 15),
-                decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 1.8,
-                      color: ColorConstants.white,
-                    ),
-                    borderRadius: BorderRadius.circular(29.5),
-                    color: ColorConstants.lightgrey.withValues(alpha: 170)),
-                child: Text(
-                  "Get Started",
-                  style: TextStyle(
-                      color: ColorConstants.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
             ),
             SizedBox(
               height: 103,
