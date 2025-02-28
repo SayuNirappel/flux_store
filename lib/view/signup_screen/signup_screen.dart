@@ -13,6 +13,11 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController passcontroller = TextEditingController();
+  TextEditingController conpasscontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,16 +31,20 @@ class _SignupScreenState extends State<SignupScreen> {
             style:
                 TextStyle(fontSize: 24, height: 2, fontWeight: FontWeight.bold),
           ),
-          custom_textfiels(
+          Custom_textfiels(
+            controller: namecontroller,
             htext: "Enter Your Name",
           ),
-          custom_textfiels(
+          Custom_textfiels(
+            controller: emailcontroller,
             htext: "Email address",
           ),
-          custom_textfiels(
+          Custom_textfiels(
+            controller: passcontroller,
             htext: "Password",
           ),
-          custom_textfiels(
+          Custom_textfiels(
+            controller: conpasscontroller,
             htext: "Confirm Password",
             bheight: 44,
           ),
