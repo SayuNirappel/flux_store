@@ -2,26 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flux_store/global_widgets/custom_textfield.dart';
 import 'package:flux_store/global_widgets/reusable_buttons.dart';
 import 'package:flux_store/utils/constants/color_constants.dart';
-import 'package:flux_store/view/login_screen/login_screen.dart';
+import 'package:flux_store/view/signup_screen/signup_screen.dart';
 
 void main() {}
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
-  TextEditingController namecontroller = TextEditingController();
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passcontroller = TextEditingController();
-  TextEditingController conpasscontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,21 +37,12 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
           ),
           Custom_textfiels(
-            controller: namecontroller,
-            htext: "Enter Your Name",
-          ),
-          Custom_textfiels(
             controller: emailcontroller,
             htext: "Email address",
           ),
           Custom_textfiels(
             controller: passcontroller,
             htext: "Password",
-          ),
-          Custom_textfiels(
-            controller: conpasscontroller,
-            htext: "Confirm Password",
-            bheight: 44,
           ),
           ReusableButton(
             fcolor: ColorConstants.white,
@@ -61,26 +51,27 @@ class _SignupScreenState extends State<SignupScreen> {
             name: "Sign Up",
             onClickButton: () {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()));
+                  MaterialPageRoute(builder: (context) => SignupScreen()));
             },
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("data"),
+              Text("or Sign Up with"),
               Row(
                 children: [],
               ),
               Row(
                 children: [
-                  Text("Already have account"),
+                  Text("Don't have account"),
                   TextButton(
                       onPressed: () {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
+                                builder: (context) => SignupScreen()));
                       },
-                      child: Text("Log In"))
+                      child: Text("Sign Up"))
                 ],
               )
             ],
