@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flux_store/global_widgets/custom_textfield.dart';
 import 'package:flux_store/global_widgets/reusable_buttons.dart';
 import 'package:flux_store/utils/constants/color_constants.dart';
+import 'package:flux_store/view/bottom_navbar_screen/bottom_navbar_screen.dart';
 import 'package:flux_store/view/signup_screen/signup_screen.dart';
 
 void main() {}
@@ -44,15 +45,22 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: passcontroller,
             htext: "Password",
           ),
-          ReusableButton(
-            fcolor: ColorConstants.white,
-            bgcolor: ColorConstants.black,
-            bcolor: ColorConstants.black,
-            name: "Sign Up",
-            onClickButton: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => SignupScreen()));
-            },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ReusableButton(
+                fcolor: ColorConstants.white,
+                bgcolor: ColorConstants.black,
+                bcolor: ColorConstants.black,
+                name: "Sign Up",
+                onClickButton: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BottomNavbarScreen()));
+                },
+              ),
+            ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,

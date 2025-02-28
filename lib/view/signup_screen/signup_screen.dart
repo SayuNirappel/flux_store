@@ -54,19 +54,25 @@ class _SignupScreenState extends State<SignupScreen> {
             htext: "Confirm Password",
             bheight: 44,
           ),
-          ReusableButton(
-            fcolor: ColorConstants.white,
-            bgcolor: ColorConstants.black,
-            bcolor: ColorConstants.black,
-            name: "Sign Up",
-            onClickButton: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()));
-            },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ReusableButton(
+                fcolor: ColorConstants.white,
+                bgcolor: ColorConstants.black,
+                bcolor: ColorConstants.black,
+                name: "Sign Up",
+                onClickButton: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
+              ),
+            ],
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("data"),
+              Text("or Login with"),
               Row(
                 children: [],
               ),
