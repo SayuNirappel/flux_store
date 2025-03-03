@@ -57,7 +57,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
-                          border: Border.all()),
+                          border:
+                              selectedCategory == index ? Border.all() : null),
                       child: CircleAvatar(
                         backgroundColor: selectedCategory == index
                             ? ColorConstants.kofblack
