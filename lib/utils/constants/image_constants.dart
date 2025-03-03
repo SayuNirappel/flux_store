@@ -6,4 +6,6 @@ class ImageConstants {
   static String inactivehomeIcon = "assets/images/Vector (1).png";
   static String activesearchIcon = "assets/images/searchactive.png";
   static String inactivesearchIcon = "assets/images/searchinactive.png";
+  static String moreIcon = "assets/images/moreicon.png";
+  static String notificationIcon = "assets/images/noticon.png";
 }
