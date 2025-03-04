@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // Carousel Imagelist 1
   List<String> carousalImageList = [
     "https://images.pexels.com/photos/21760959/pexels-photo-21760959/free-photo-of-people-working-on-field-near-deep-forest.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     "https://images.pexels.com/photos/29321653/pexels-photo-29321653/free-photo-of-modern-industrial-staircase-with-neon-lights.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -21,16 +22,42 @@ class _HomeScreenState extends State<HomeScreen> {
     "https://images.pexels.com/photos/30974551/pexels-photo-30974551/free-photo-of-scenic-silhouette-of-street-lamps-at-dusk.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     "https://images.pexels.com/photos/3068920/pexels-photo-3068920.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
   ];
-
+//List of Scroll Page 1
   List<Map> scrollPageImageWithDetilsList = [
-    {"url": "", "Name": "Something", "Price": "\$399.9"},
-    {"url": "", "Name": "Hoody", "Price": "\$234.0"},
-    {"url": "", "Name": "", "Price": ""},
-    {"url": "", "Name": "", "Price": ""},
-    {"url": "", "Name": "", "Price": ""}
+    {
+      "url":
+          "https://images.pexels.com/photos/14994091/pexels-photo-14994091/free-photo-of-magenta-beautiful-woman.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "Name": "Something",
+      "Price": "\$399.9"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/30743125/pexels-photo-30743125/free-photo-of-woman-in-green-dress-by-historical-landmark.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "Name": "Hoody",
+      "Price": "\$234.0"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/15685362/pexels-photo-15685362/free-photo-of-portrait-of-a-young-woman-in-a-white-dress.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "Name": "Unknown ",
+      "Price": "Free"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/30944870/pexels-photo-30944870/free-photo-of-woman-sitting-on-yellow-flower-sculpture-outdoors.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "Name": "Unknown ",
+      "Price": "Free"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/27587343/pexels-photo-27587343/free-photo-of-a-woman-in-a-blue-shirt-and-black-leather-jacket.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "Name": "Unknown ",
+      "Price": "Free"
+    }
   ];
 
   int selectedCategory = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,50 +75,195 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 30,
               ),
+              //carousel section 1
               _buildCarouselSection(),
               SizedBox(
                 height: 30,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 34, right: 35, top: 20),
-                child: Column(
-                  children: [
-                    Row(
+              //Feature Products 1
+              _buildFeatureProducts(),
+              SizedBox(
+                height: 19,
+              ),
+              //New Collection
+              _buildWFitContainer(),
+              SizedBox(
+                height: 38,
+              ),
+              _buildRecommended(),
+              SizedBox(
+                height: 34,
+              ),
+              Column(
+                children: [
+                  Container(
+                    width: 311,
+                    height: 26,
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Feature Products"),
-                        TextButton(onPressed: () {}, child: Text("Show all"))
-                      ],
+                      children: [],
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                height: 172,
-                                width: 136,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: NetworkImage(
-                                            "https://images.pexels.com/photos/30743125/pexels-photo-30743125/free-photo-of-woman-in-green-dress-by-historical-landmark.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"))),
-                              ),
-                              Text("Turtle Neck Sweater"),
-                              Text(scrollPageImageWithDetilsList[0]["Price"])
-                            ],
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              )
+                  ),
+                  SizedBox(
+                    height: 33,
+                  ),
+                  Container(
+                    width: 312,
+                    height: 141.03,
+                  ),
+                  SizedBox(
+                    height: 14.97,
+                  ),
+                  Container(
+                    width: 312,
+                    height: 210,
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Container(
+                    width: 316,
+                    height: 194,
+                    child: Row(
+                      children: [Container(), Container()],
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ));
+  }
+
+  Widget _buildRecommended() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 32,
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Recommented"),
+              TextButton(onPressed: () {}, child: Text("Show all"))
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              spacing: 15,
+              children: List.generate(
+                  scrollPageImageWithDetilsList.length,
+                  (index) => Column(
+                        children: [
+                          Container(
+                            height: 66,
+                            width: 213,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(
+                                        scrollPageImageWithDetilsList[index]
+                                            ["url"]))),
+                          ),
+                          Text(
+                            scrollPageImageWithDetilsList[index]["Name"],
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            scrollPageImageWithDetilsList[index]["Price"],
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      )),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Container _buildWFitContainer() {
+    return Container(
+      height: 157,
+      width: double.infinity,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+              child: Container(
+                  margin: EdgeInsets.only(left: 79, top: 35, bottom: 36),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("New Collection"),
+                      SizedBox(
+                        height: 23,
+                      ),
+                      Text("HANG OUT & PARTY")
+                    ],
+                  ))),
+          Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(
+                        "https://images.pexels.com/photos/6279901/pexels-photo-6279901.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"))),
+            height: 158,
+            width: 119,
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFeatureProducts() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 34, right: 35, top: 20),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Feature Products"),
+              TextButton(onPressed: () {}, child: Text("Show all"))
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              spacing: 20,
+              children: List.generate(
+                  scrollPageImageWithDetilsList.length,
+                  (index) => Column(
+                        children: [
+                          Container(
+                            height: 172,
+                            width: 136,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(
+                                        scrollPageImageWithDetilsList[index]
+                                            ["url"]))),
+                          ),
+                          Text(
+                            scrollPageImageWithDetilsList[index]["Name"],
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            scrollPageImageWithDetilsList[index]["Price"],
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      )),
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   Widget _buildCarouselSection() {
