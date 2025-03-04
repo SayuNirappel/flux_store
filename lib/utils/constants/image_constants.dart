@@ -8,8 +8,4 @@ class ImageConstants {
   static String inactivesearchIcon = "assets/images/searchinactive.png";
   static String moreIcon = "assets/images/moreicon.png";
   static String notificationIcon = "assets/images/noticon.png";
-  final List<String> carouselImageList = [
-    "https://images.pexels.com/photos/21760959/pexels-photo-21760959/free-photo-of-people-working-on-field-near-deep-forest.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-    "https://images.pexels.com/photos/30844663/pexels-photo-30844663/free-photo-of-giraffes-grazing-in-african-wilderness-outdoors.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-  ];
 }
